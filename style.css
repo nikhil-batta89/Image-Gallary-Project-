@@ -1,0 +1,84 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper
+{
+   height:100vh;
+   overflow-x:hidden;
+   overflow-y:auto;
+}
+.container
+{
+    height:100%;
+    max-width:1200px;
+    margin: auto; /* left or right side equal ke liya ya center me 1200 pxayaga */
+    padding:20px;/*border or  content ke  space is called a   padding*/
+}
+
+.container h1
+{
+    margin:20px 100px;
+    text-align:center;
+    margin-bottom:20px;
+    font-size:3rem;
+}
+
+.gallery
+{
+  display: flex;
+  flex-wrap: wrap;/*same row me place nahi ho sakte tu nechi ayajage*/
+  justify-content: space-between;
+}
+
+.card
+{
+    width: 32%;
+    position: relative;/* imageke parent to relative karna hoga*/
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card img{
+    height: 100%;
+    width: 100%;
+    filter: grayscale(100%);
+    box-shadow: 0 0 20px #333;
+    object-fit: cover;
+}
+.card:hover 
+{
+    transform: scale(1.04);
+    filter: drop-shadow(0 0 10px #333);
+    transition: 0.3s;
+}
+
+.card:hover img{
+    filter: grayscale(0%);
+}
+
+.card figcaption
+{
+    position: absolute;
+    padding: 25px;
+    width: 100%;
+    height: 20%;
+    bottom: 0;
+    left: 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 0 0 10px 10px;
+    transition: 0.3s;
+    opacity: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255,0) 100%);
+}
+.card:hover figcaption
+{
+    opacity: 1;
+    transform: scale(1.03);
+}
